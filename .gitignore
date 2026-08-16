@@ -1,0 +1,35 @@
+# --- secrets ---
+.env
+data/cookies.txt
+
+# --- python / venv ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# --- large / private input data (not pushable) ---
+data/surgery.mp4
+data/videos/
+data/frames/
+# guideline PDFs are fetched via scripts/download_papers.py, not committed
+data/papers/*.pdf
+
+# --- generated artifacts (rebuild via scripts) ---
+db/demo.db
+data/observations.json
+data/video_index.npy
+data/video_index.json
+data/doc_index.npy
+data/doc_index.json
+data/graph.json
+data/graph_edge_cache.json
+
+# --- run outputs / logs ---
+data/*.log
+data/test_run_results.json
+data/test_scores.json
+
+# keep the empty dirs so the layout is clear
+!data/papers/.gitkeep
+!data/frames/.gitkeep

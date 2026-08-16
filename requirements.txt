@@ -1,0 +1,12 @@
+openai>=1.40
+streamlit>=1.37
+pydantic>=2.7
+python-dotenv>=1.0
+numpy>=1.26
+pypdf>=4.2
+imageio-ffmpeg>=0.4.9
+yt-dlp>=2024.8.6
+networkx>=3.1
+pyvis>=0.3.2
+fastapi>=0.110
+uvicorn>=0.29

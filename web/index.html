@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surgical Video RAG</title>
+  <link rel="stylesheet" href="/static/style.css?v=3" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">🔬</span>
+      <div class="brand-txt">
+        <div class="title">Surgical Video <span>RAG</span></div>
+        <div class="subtitle" id="caseName">Laparoscopic Cholecystectomy</div>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <span class="dot"></span> Educational / review tool — not for diagnosis or treatment
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- LEFT: video + live segment -->
+    <section class="left">
+      <div class="video-card card">
+        <div class="video-wrap">
+          <video id="player" controls preload="metadata" playsinline></video>
+        </div>
+        <div class="timeline-block">
+          <div class="timeline" id="timeline">
+            <div class="playhead" id="playhead"></div>
+          </div>
+          <div class="legend" id="legend"></div>
+        </div>
+      </div>
+
+      <div class="now card" id="nowCard">
+        <div class="now-head">
+          <span class="now-label"><span class="live-dot"></span> Now showing</span>
+          <span class="now-time" id="nowTime">0:00</span>
+        </div>
+        <div class="now-phase" id="nowPhase"></div>
+        <div class="now-body" id="nowBody">
+          <span class="muted">Play or scrub the video — the current step is described here.</span>
+        </div>
+        <div class="now-instruments" id="nowInstruments"></div>
+      </div>
+    </section>
+
+    <!-- RIGHT: chat -->
+    <section class="right card">
+      <div class="chat-head">
+        <div class="chat-title">Ask this surgery</div>
+        <div class="modes" id="modes">
+          <button class="mode active" data-mode="combined">Combined</button>
+          <button class="mode" data-mode="video">Video</button>
+          <button class="mode" data-mode="knowledge">Knowledge</button>
+        </div>
+      </div>
+
+      <div class="messages" id="messages">
+        <div class="msg assistant intro">
+          <div class="bubble">
+            Hi 👋 Ask about this laparoscopic cholecystectomy. I'll answer with
+            <span class="ts-demo">clickable timestamps</span> — click one to jump the video there.
+          </div>
+        </div>
+      </div>
+
+      <div class="suggestions" id="suggestions"></div>
+
+      <div class="composer">
+        <input id="input" type="text" placeholder="e.g. Where does clipping begin?" autocomplete="off" />
+        <button id="send" title="Ask">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js?v=3"></script>
+</body>
+</html>
